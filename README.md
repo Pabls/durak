@@ -1,1 +1,1 @@
-durak
+Russian card game
