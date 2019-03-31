@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Durak</string>
+
+    <string name="activity_start.title">Durak</string>
+    <string name="activity_start.btn.text.new_game">Новая игра</string>
+    <string name="activity_start.btn.text.statistics">Статистика</string>
+
+    <string name="activity_statistics.text.title">Статистика</string>
+    <string name="activity_statistics.text.games_number">Всего игр :</string>
+    <string name="activity_statistics.text.won_games">Выиграно :</string>
+    <string name="activity_statistics.text.lost_games">Проиграно :</string>
+    <string name="activity_statistics.text.total_time">В игре :</string>
+
 </resources>

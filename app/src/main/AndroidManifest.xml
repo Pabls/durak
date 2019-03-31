@@ -9,7 +9,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".presentation.statistics.views.StatisticsActivity">
+        </activity>
+        <activity android:name=".presentation.game.views.GameActivity">
+        </activity>
+        <activity android:name=".presentation.base.views.BaseActivity">
+        </activity>
+        <activity android:name=".presentation.start.views.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
