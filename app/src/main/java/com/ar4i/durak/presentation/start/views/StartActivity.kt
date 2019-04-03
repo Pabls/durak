@@ -25,7 +25,6 @@ class StartActivity : BaseActivity(), StartView {
         super.onCreate(savedInstanceState)
         this.btnStartGame = findViewById(R.id.btn_new_game)
         this.btnShowStatistics = findViewById(R.id.btn_statistics)
-        navigateToStatisticsActivity()
     }
 
 
@@ -44,11 +43,11 @@ class StartActivity : BaseActivity(), StartView {
     //==========================================start implements StartView==============================================
 
     override fun onStartGameButtonClick(): Observable<Boolean> {
-        return RxView.clicks(this.btnStartGame).map { click -> actionComplete() }
+        return RxView.clicks(this.btnStartGame).map { _ -> actionComplete() }
     }
 
     override fun onShowStatisticsButtonClick(): Observable<Boolean> {
-        return RxView.clicks(this.btnShowStatistics).map { click ->  actionComplete() }
+        return RxView.clicks(this.btnShowStatistics).map { _ ->  actionComplete() }
     }
 
     override fun navigateToNewGameActivity() {

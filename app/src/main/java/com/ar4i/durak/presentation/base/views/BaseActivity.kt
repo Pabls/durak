@@ -27,6 +27,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseMvpView {
 
     //-------------------------------------------end Abstarct methods---------------------------------------------------
 
+    //==========================================start Protected Methods==============================================
+
     protected fun actionComplete(): Boolean = true
+
+    //-------------------------------------------end Protected Methods-----------------------------------------------
 
 }
