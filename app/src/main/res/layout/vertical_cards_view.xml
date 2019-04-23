@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+    <ImageView
+            style="@style/AppTheme.VerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img1"/>
+    <ImageView
+            style="@style/AppTheme.NextVerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img2"/>
+    <ImageView
+            style="@style/AppTheme.NextVerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img3"/>
+    <ImageView
+            style="@style/AppTheme.NextVerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img4"/>
+    <ImageView
+            style="@style/AppTheme.NextVerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img5"/>
+    <ImageView
+            style="@style/AppTheme.NextVerticalImage"
+            app:srcCompat="@drawable/ic_card_back"
+            android:id="@+id/img6"/>
+
+</LinearLayout>

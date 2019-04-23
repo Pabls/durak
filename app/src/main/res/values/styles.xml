@@ -1,6 +1,12 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -32,6 +38,23 @@
         <item name="android:layout_marginStart">@dimen/margin_8</item>
         <item name="android:layout_width">@dimen/match_constraint</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.Image" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">32dp</item>
+    </style>
+
+    <style name="AppTheme.NextHorizontalImage" parent="AppTheme.Image">
+        <item name="android:layout_marginLeft">-8dp</item>
+    </style>
+
+    <style name="AppTheme.VerticalImage" parent="AppTheme.Image">
+        <item name="android:rotation">90</item>
+    </style>
+
+    <style name="AppTheme.NextVerticalImage" parent="AppTheme.VerticalImage">
+        <item name="android:layout_marginTop">-8dp</item>
     </style>
 
 </resources>

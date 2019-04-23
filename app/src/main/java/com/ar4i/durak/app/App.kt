@@ -3,32 +3,22 @@ package com.ar4i.durak.app
 import android.app.Application
 import com.ar4i.durak.app.di.components.AppComponent
 import com.ar4i.durak.app.di.components.DaggerAppComponent
+import javax.inject.Singleton
 
+@Singleton
 class App : Application() {
 
-    //==========================================start Fields==============================================
-
-    private lateinit var appComponent: AppComponent
-
-    //-------------------------------------------end Fields-----------------------------------------------
-
-
-    //==========================================start Lifecycle==============================================
+    companion object {
+        val appComponent: AppComponent by lazy {
+            DaggerAppComponent
+                .builder()
+                .build()
+        }
+        val instance = this
+    }
 
     override fun onCreate() {
         super.onCreate()
-
-        this.appComponent = DaggerAppComponent.create()
+        appComponent.inject(this)
     }
-
-    //-------------------------------------------end Lifecycle-----------------------------------------------
-
-
-    //==========================================start Public Methods==============================================
-
-    open fun getComponent(): AppComponent = this.appComponent
-
-    //-------------------------------------------end Public Methods-----------------------------------------------
-
-
 }

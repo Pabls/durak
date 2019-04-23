@@ -5,6 +5,10 @@ import com.ar4i.durak.presentation.base.views.BaseActivity
 
 class StatisticsActivity : BaseActivity(), StatisticsView {
 
+    override fun inject() {
+        getComponent().injectStatisticsActivity(this)
+    }
+
     //==========================================start extends BaseActivity==============================================
 
     override fun getLayoutId(): Int {

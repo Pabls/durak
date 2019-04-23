@@ -23,13 +23,13 @@
             android:layout_marginBottom="@dimen/margin_8"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/textView"
-            android:layout_marginEnd="80dp"/>
+            android:layout_marginEnd="88dp"/>
     <Button
             android:id="@+id/btn_statistics"
             style="@style/AppTheme.PrimaryButton"
             android:text="@string/activity_start.btn.text.statistics"
             android:layout_marginBottom="@dimen/margin_8"
             app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView" android:layout_marginStart="80dp"/>
+            app:layout_constraintStart_toStartOf="@+id/textView" android:layout_marginStart="88dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

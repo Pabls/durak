@@ -3,13 +3,18 @@ package com.ar4i.durak.presentation.base.views
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.ar4i.durak.app.App
+import com.ar4i.durak.app.di.components.AppComponent
 
 abstract class BaseActivity : AppCompatActivity(), BaseMvpView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        inject()
+
         setContentView(getLayoutId())
+
     }
 
     //==========================================start implements BaseMvpView============================================
@@ -25,11 +30,17 @@ abstract class BaseActivity : AppCompatActivity(), BaseMvpView {
 
     protected abstract fun getLayoutId(): Int
 
+    protected abstract fun inject()
+
     //-------------------------------------------end Abstarct methods---------------------------------------------------
 
     //==========================================start Protected Methods==============================================
 
     protected fun actionComplete(): Boolean = true
+
+    protected fun getComponent(): AppComponent {
+        return App.appComponent
+    }
 
     //-------------------------------------------end Protected Methods-----------------------------------------------
 

@@ -7,5 +7,6 @@ class GamesTable {
         const val DATE= "date"
         const val IS_WIN= "is_win"
         const val GAME_TIME= "time"
+        const val PLAYERS_NUMBER = "players_number"
     }
 }

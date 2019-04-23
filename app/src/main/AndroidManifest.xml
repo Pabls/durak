@@ -13,9 +13,8 @@
         </activity>
         <activity android:name=".presentation.game.views.GameActivity">
         </activity>
-        <activity android:name=".presentation.base.views.BaseActivity">
-        </activity>
-        <activity android:name=".presentation.start.views.StartActivity">
+        <activity android:name=".presentation.start.views.StartActivity"
+        android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

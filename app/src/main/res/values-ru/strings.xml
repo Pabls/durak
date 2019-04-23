@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Дурак</string>
+
+    <string name="activity_start.title">Дурак</string>
+    <string name="activity_start.btn.text.new_game">Новая игра</string>
+    <string name="activity_start.btn.text.statistics">Статистика</string>
+
+    <string name="activity_statistics.text.title">Статистика</string>
+    <string name="activity_statistics.text.games_number">Всего игр :</string>
+    <string name="activity_statistics.text.won_games">Выиграно :</string>
+    <string name="activity_statistics.text.lost_games">Проиграно :</string>
+    <string name="activity_statistics.text.total_time">В игре :</string>
+    <string name="activity_statistics.text.default_value">0</string>
+
+</resources>

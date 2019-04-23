@@ -6,11 +6,20 @@ import android.widget.Button
 import com.ar4i.durak.R
 import com.ar4i.durak.presentation.base.views.BaseActivity
 import com.ar4i.durak.presentation.game.views.GameActivity
+import com.ar4i.durak.presentation.start.presenter.StartPresenter
 import com.ar4i.durak.presentation.statistics.views.StatisticsActivity
 import com.jakewharton.rxbinding2.view.RxView
 import io.reactivex.Observable
+import javax.inject.Inject
 
 class StartActivity : BaseActivity(), StartView {
+
+    //==========================================start Fields============================================================
+
+    @Inject
+    lateinit var startPresenter : StartPresenter
+
+    //-------------------------------------------end Fields-------------------------------------------------------------
 
     //==========================================start Ui================================================================
 
@@ -23,10 +32,16 @@ class StartActivity : BaseActivity(), StartView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         this.btnStartGame = findViewById(R.id.btn_new_game)
         this.btnShowStatistics = findViewById(R.id.btn_statistics)
+        this.startPresenter.attachView(this)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        this.startPresenter.detachView()
+    }
 
     //-------------------------------------------end Lifecycle----------------------------------------------------------
 
@@ -37,17 +52,21 @@ class StartActivity : BaseActivity(), StartView {
         return R.layout.activity_start
     }
 
+    override fun inject() {
+        getComponent().injectStartActivity(this)
+    }
+
     //-------------------------------------------end extends BaseActivity-----------------------------------------------
 
 
     //==========================================start implements StartView==============================================
 
     override fun onStartGameButtonClick(): Observable<Boolean> {
-        return RxView.clicks(this.btnStartGame).map { _ -> actionComplete() }
+        return RxView.clicks(this.btnStartGame).map { actionComplete() }
     }
 
     override fun onShowStatisticsButtonClick(): Observable<Boolean> {
-        return RxView.clicks(this.btnShowStatistics).map { _ ->  actionComplete() }
+        return RxView.clicks(this.btnShowStatistics).map { actionComplete() }
     }
 
     override fun navigateToNewGameActivity() {

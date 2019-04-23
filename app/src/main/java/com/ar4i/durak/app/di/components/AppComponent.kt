@@ -1,5 +1,7 @@
 package com.ar4i.durak.app.di.components
 
+import com.ar4i.durak.app.App
+import com.ar4i.durak.app.di.modules.AppModule
 import com.ar4i.durak.app.di.modules.DatabaseModule
 import com.ar4i.durak.app.di.modules.PresentationModule
 import com.ar4i.durak.app.di.modules.RepositoryModule
@@ -11,6 +13,7 @@ import javax.inject.Singleton
 
 @Component(
     modules = arrayOf(
+        AppModule::class,
         DatabaseModule::class,
         PresentationModule::class,
         RepositoryModule::class
@@ -18,6 +21,7 @@ import javax.inject.Singleton
 )
 @Singleton
 interface AppComponent {
+    fun inject(app: App)
     fun injectStartActivity(startActivity: StartActivity)
     fun injectStatisticsActivity(statisticsActivity: StatisticsActivity)
     fun injectGameActivity(gameActivity: GameActivity)
