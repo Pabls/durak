@@ -1,13 +1,13 @@
-package com.ar4i.durak.data.dao
+package com.ar4i.durak.data.db.dao
 
 import android.database.Cursor
-import com.ar4i.durak.data.DbHelper
+import com.ar4i.durak.data.db.DbHelper
 import io.reactivex.Completable
 import io.reactivex.Single
 import java.lang.Exception
 import javax.inject.Inject
-import com.ar4i.durak.data.tables.GamesTable
-import com.ar4i.durak.data.dto.GameDto
+import com.ar4i.durak.data.db.tables.GamesTable
+import com.ar4i.durak.data.db.dto.GameDto
 
 
 class GamesDao : IGamesDao {
@@ -19,7 +19,7 @@ class GamesDao : IGamesDao {
 
     //==========================================start Fields============================================================
 
-    var dbHelper: DbHelper
+    private var dbHelper: DbHelper
 
     //-------------------------------------------end Fields-------------------------------------------------------------
 

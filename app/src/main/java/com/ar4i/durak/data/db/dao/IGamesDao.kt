@@ -1,6 +1,6 @@
-package com.ar4i.durak.data.dao
+package com.ar4i.durak.data.db.dao
 
-import com.ar4i.durak.data.dto.GameDto
+import com.ar4i.durak.data.db.dto.GameDto
 import io.reactivex.Completable
 import io.reactivex.Single
 

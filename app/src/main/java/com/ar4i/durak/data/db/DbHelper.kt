@@ -1,11 +1,12 @@
-package com.ar4i.durak.data
+package com.ar4i.durak.data.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.ar4i.durak.data.tables.GamesTable
+import com.ar4i.durak.data.db.tables.GamesTable
 
-class DbHelper(context: Context, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, version) {
+class DbHelper(context: Context, version: Int) : SQLiteOpenHelper(context,
+    DATABASE_NAME, null, version) {
 
     companion object {
         const val DATABASE_NAME = "com.ar4i.durak.data.Durak.database"

@@ -1,4 +1,4 @@
-package com.ar4i.durak.data.tables
+package com.ar4i.durak.data.db.tables
 
 import android.content.ContentValues
 
