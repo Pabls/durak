@@ -2,6 +2,7 @@ package com.ar4i.durak.app.di.modules
 
 import android.content.Context
 import com.ar4i.durak.data.DbHelper
+import com.ar4i.durak.data.dao.GamesDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,5 +16,9 @@ class DatabaseModule {
     @Singleton
     fun provideDBHelper(context: Context): DbHelper {
         return DbHelper(context, dbVersion)
+    }
+
+    fun provideGamesDao(dbHelper: DbHelper): GamesDao {
+        return GamesDao(dbHelper)
     }
 }

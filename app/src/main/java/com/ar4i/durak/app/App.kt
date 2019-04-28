@@ -14,7 +14,6 @@ class App : Application() {
                 .builder()
                 .build()
         }
-        val instance = this
     }
 
     override fun onCreate() {
