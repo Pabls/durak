@@ -39,8 +39,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseMvpView {
     protected fun actionComplete(): Boolean = true
 
     protected fun getComponent(): AppComponent {
-        var aaa = App.appComponent
-        return aaa
+        return App.appComponent
     }
 
     //-------------------------------------------end Protected Methods-----------------------------------------------
