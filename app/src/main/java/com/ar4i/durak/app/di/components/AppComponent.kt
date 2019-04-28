@@ -12,6 +12,7 @@ import javax.inject.Singleton
     modules = arrayOf(
         AppModule::class,
         DatabaseModule::class,
+        InteractorsModule::class,
         MappersModule::class,
         PresentationModule::class,
         RepositoryModule::class

@@ -1,5 +1,6 @@
 package com.ar4i.durak.app.di.modules
 
+import com.ar4i.durak.domain.GameInteractor
 import com.ar4i.durak.presentation.game.presenter.GamePresenter
 import com.ar4i.durak.presentation.start.presenter.StartPresenter
 import com.ar4i.durak.presentation.statistics.presenter.StatisticsPresenter
@@ -20,7 +21,7 @@ class PresentationModule {
     }
 
     @Provides
-    fun provideGamePresenter(): GamePresenter {
-        return GamePresenter()
+    fun provideGamePresenter(gameInteractor: GameInteractor): GamePresenter {
+        return GamePresenter(gameInteractor)
     }
 }

@@ -10,6 +10,7 @@ class GameActivity : BaseActivity(), GameView {
 
     //==========================================start Fields============================================================
 
+
     @Inject
     lateinit var gamePresenter: GamePresenter
 
