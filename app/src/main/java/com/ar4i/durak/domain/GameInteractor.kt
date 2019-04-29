@@ -19,10 +19,11 @@ class GameInteractor : IGameInteractor {
 
 
     override fun insertGame(gameVm: GameVm): Completable {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return databaseRepository.insertGame(gameVm)
     }
 
     override fun getGames(): Single<List<GameVm>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return databaseRepository.getGames()
     }
+
 }

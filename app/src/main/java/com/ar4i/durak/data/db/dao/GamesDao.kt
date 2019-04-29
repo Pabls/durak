@@ -2,12 +2,11 @@ package com.ar4i.durak.data.db.dao
 
 import android.database.Cursor
 import com.ar4i.durak.data.db.DbHelper
+import com.ar4i.durak.data.db.dto.GameDto
+import com.ar4i.durak.data.db.tables.GamesTable
 import io.reactivex.Completable
 import io.reactivex.Single
-import java.lang.Exception
 import javax.inject.Inject
-import com.ar4i.durak.data.db.tables.GamesTable
-import com.ar4i.durak.data.db.dto.GameDto
 
 
 class GamesDao : IGamesDao {
@@ -32,8 +31,8 @@ class GamesDao : IGamesDao {
             var gamesDaoList: MutableList<GameDto> = ArrayList()
             var cursor: Cursor? = null
             try {
-                val db = this.dbHelper.writableDatabase
-                cursor = db.rawQuery(GamesTable.getTableCreationCommand(), null)
+                val db = dbHelper.writableDatabase
+                cursor = db.rawQuery(GamesTable.getGamesSelectionCommand(), null)
                 if (cursor.moveToFirst()) {
                     while (!cursor.isAfterLast) {
                         val date = cursor.getString(cursor.getColumnIndex(GamesTable.getDateFieldName()))
@@ -56,18 +55,16 @@ class GamesDao : IGamesDao {
             } catch (ex: Exception) {
                 closeConnection(cursor)
                 emitter.onError(ex)
-            } finally {
-                closeConnection(cursor)
-                emitter.onSuccess(gamesDaoList)
             }
-
+            closeConnection(cursor)
+            emitter.onSuccess(gamesDaoList)
         }
     }
 
     override fun insertGame(gameDto: GameDto): Completable {
         return Completable.create { emitter ->
             try {
-                val db = this.dbHelper.writableDatabase
+                val db = dbHelper.writableDatabase
                 var contentValue =
                     GamesTable.toContentValues(gameDto.date, gameDto.isWin, gameDto.gameTime, gameDto.playersNumber)
 
@@ -75,10 +72,9 @@ class GamesDao : IGamesDao {
             } catch (ex: Exception) {
                 dbHelper.close()
                 emitter.onError(ex)
-            } finally {
-                dbHelper.close()
-                emitter.onComplete()
             }
+            dbHelper.close()
+            emitter.onComplete()
         }
     }
 
