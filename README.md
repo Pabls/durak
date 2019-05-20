@@ -1,1 +1,1 @@
-Russian card game
+Russian card game (development in progress)
