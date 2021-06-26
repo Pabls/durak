@@ -1,1 +1,2 @@
-Russian card game (development in progress)
+# Документация к проекту
+Нормально делай - нормально будет 
